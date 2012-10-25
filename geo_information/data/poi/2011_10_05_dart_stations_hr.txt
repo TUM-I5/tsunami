@@ -1,0 +1,54 @@
+DART Station Listing - 10/07/2011 0812 UTC
+Station ID   Name                                                Latitude   Longitude   Water Depth   Deployment Start        Threshold   Owner
+21401        250NM SE of Iturup Island                           42.61666   152.58333   9999          2010-11-08 08:28:00.0   99          INTERNATIONAL
+21413        690 NM SE of Tokyo, Japan                           30.52778   152.12277   5822          2010-06-15 07:51:16.0   30          NDBC
+21414        184 NM SW of Adak, AK                               48.94722   178.26584   5375          2011-07-05 08:33:59.0   30          NDBC
+21415        175 NM S of Attu, Alaska                            50.18028   171.84583   4745          2011-07-07 00:15:05.0   30          NDBC
+21416        240 NM SE of Kamchatka Peninsula                    48.05833   163.51527   5744          2011-07-09 08:23:58.0   30          NDBC
+21418        450 NM NE of Tokyo, Japan                           38.69333   148.66499   5662          2011-07-13 13:15:19.0   30          NDBC
+21419        209 NM SE of Kuril Islands                          44.45500   155.73528   5318          2010-06-04 02:15:47.0   30          NDBC
+23401        600 NM West-Northwest of Phuket, Thailand            8.90639    88.54028   9999          2006-01-01 00:00:00.0   99          INTERNATIONAL
+32401        260 NM West-Southwest of Arica Chile               -19.29028   -74.72639   9999          2008-04-30 00:00:00.0   99          INTERNATIONAL
+32411        710 NM West-Southwest of Panama City, Panama         5.00528   -90.83806   3312          2011-05-16 02:15:24.0   30          NDBC
+32412        630 NM Southwest of Lima, Peru                     -17.98056   -86.31334   4373          2011-05-04 03:18:27.0   30          NDBC
+32413        1000 NM WNW of Lima, Peru                           -7.40028   -93.49889   3890          2010-08-23 02:15:57.0   30          NDBC
+41420        690 NM East of Miami, FL                            23.47500   -67.31139   5739          2010-04-28 09:15:22.0   30          NDBC
+41421        320 NM North of San Juan, PR                        23.40667   -63.94833   5845          2010-05-03 02:11:26.0   30          NDBC
+41424        370 NM East of Charleston, SC                       32.93278   -72.49333   5284          2011-06-27 19:15:51.0   30          NDBC
+42407        230 NM South of San Juan, PR                        15.28833   -68.21722   4499          2010-10-27 05:49:23.0   65          NDBC
+42409        300 NM Southeast of New Orleans, LA                 27.08056   -85.70889   3282          2011-10-05 03:15:17.0   30          NDBC
+43412        240 NM Southwest of Manzanillo, Mexico              16.03056  -107.00111   3245          2009-05-06 21:05:00.0   30          NDBC
+43413        360 NM South-Southwest of Acapulco, Mexico          11.06500   -99.85667   3380          2010-09-03 17:29:50.0   30          NDBC
+44401        250 NM SE of Montauk Point, NY                      37.56417   -50.00917   5492          2011-07-03 07:32:30.0   30          NDBC
+44402        250 NM SE of Montauk Point, NY                      39.40111   -70.94500   2443          2011-07-08 13:15:37.0   30          NDBC
+46402        240 NM South of Dutch Harbor, AK                    51.06750  -164.02306   4760          2011-06-23 08:15:56.0   30          NDBC
+46403        230 NM Southeast of Shumagin Island, AK             52.63889  -156.93500   4512          2011-06-21 22:15:14.0   30          NDBC
+46404        230 NM West of Astoria, OR                          45.85806  -128.79695   2738          2010-04-30 23:16:00.0   30          NDBC
+46407        210 NM West of Coos Bay, OR                         42.60167  -128.89694   3266          2011-05-29 22:15:51.0   65          NDBC
+46408        NW Pacific South of AK                              49.62500  -169.85251   5400          2011-07-01 21:15:43.0   30          NDBC
+46409        240 NM Southeast of Kodiak, AK                      55.30083  -148.49861   4200          2011-06-19 08:15:32.0   30          NDBC
+46410        330 NM Southeast of Anchorage, AK                   57.63528  -143.79918   3783          2011-06-14 04:15:04.0   30          NDBC
+46411        260 NM Northwest of San Francisco, CA               39.34250  -127.02084   4266          2011-05-31 06:11:28.0   30          NDBC
+46412        190 NM West-Southwest of San Diego, CA              32.45528  -120.55695   3750          2009-12-03 00:00:00.0   30          NDBC
+46413        205NM South-Southeast of Adak, AK                   48.29639  -174.20416   5385          2011-07-03 07:15:44.0   30          NDBC
+46419        300 NM West-Northwest of Seattle, WA                48.76833  -129.62695   2775          2011-06-10 21:55:06.0   30          NDBC
+51406        2900 NM Southeast of Hawaii                         -8.48000  -125.03001   4450          2010-04-17 23:15:34.0   60          NDBC
+51407        140 NM Southeast of Honolulu, HI                    19.57778  -156.58556   4761          2011-09-29 02:00:04.0   30          NDBC
+51425        370 NM NW of Apia, Samoa                            -9.52194  -176.24779   4960          2011-08-18 08:15:33.0   30          NDBC
+51426        400 NM Southeast of Tonga                          -22.97361  -168.13889   5650          2011-08-23 05:45:00.0   30          NDBC
+52401        610 NM Northeast of Saipan                          19.25472   155.76195   5578          2011-07-19 10:15:37.0   30          NDBC
+52402        790 NM Northwest of Kwajalein                       11.88222   154.11139   5875          2010-01-03 11:28:53.0   30          NDBC
+52403        430 NM Southwest of Truk                             4.05556   145.61111   4474          2011-08-06 17:15:44.0   30          NDBC
+52404        760 NM Northeast of Manila, Philippines             20.93722   132.30167   5956          2011-07-28 08:15:06.0   65          NDBC
+52405        740 NM West of Agana, Guam                          12.88139   132.33444   5932          2009-12-18 07:15:33.0   30          NDBC
+52406        450 NM Northeast of the Guadalcanal                 -5.29306   165.00166   1826          2010-07-05 09:20:48.0   30          NDBC
+53401        Indonesia                                            0.05000    91.88333   4530          2007-09-26 00:00:00.0   99          INTERNATIONAL
+54401        640 NM Northeast of Auckland, New Zealand          -33.00306  -172.98666   5836          2009-09-12 18:01:23.0   89          NDBC
+55012        Coral Sea 1     -      1285km ENE of Townsville    -15.79889   158.40027   3284          2006-01-01 00:00:00.0   99          INTERNATIONAL
+55013        Tasman Sea 3     -     1160km ESE of Hobart        -46.66528   161.00139   4920          2006-01-01 00:00:00.0   99          INTERNATIONAL
+55015        Tasman Sea     -     1110km ESE of Hobart          -46.84000   160.25444   5020          2006-01-01 00:00:00.0   99          INTERNATIONAL
+55016        FIJI BASIN                                         -26.07000   176.00000   9999          2010-06-16 00:00:00.0   99          INTERNATIONAL
+55023        Coral Sea 2     -      870km NE of Townsville      -14.80000   153.57973   4595          2009-09-15 10:55:50.0   99          INTERNATIONAL
+55042        Tasman Sea 2     -     1175km ESE of Hobart        -44.85278   161.72804   4823          2011-04-04 10:14:44.0   99          INTERNATIONAL
+56001        Indian Ocean 1    -     1025km  NW of Dampier      -13.98528   110.00472   5660          2006-01-01 00:00:00.0   99          INTERNATIONAL
+56003        Indian Ocean 2     -     630km NNE of Dampier      -15.02139   117.98944   5664          2006-01-01 00:00:00.0   99          INTERNATIONAL

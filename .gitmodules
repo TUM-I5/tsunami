@@ -1,0 +1,9 @@
+[submodule "submodules/nthmp-benchmark-problems"]
+	path = submodules/nthmp-benchmark-problems
+	url = git://github.com/rjleveque/nthmp-benchmark-problems.git
+[submodule "submodules/geoclaw"]
+	path = submodules/geoclaw
+	url = git://github.com/clawpack/geoclaw.git
+[submodule "submodules/tohoku2011-paper"]
+	path = submodules/tohoku2011-paper
+	url = git://github.com/rjleveque/tohoku2011-paper1.git
