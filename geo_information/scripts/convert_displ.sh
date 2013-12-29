@@ -31,6 +31,9 @@
 #        Projection of the gridded data in a specified domain
 #        to a 2D grid with a pre-defined number of rows/columns 
 
+# load configuration
+. ./scripts/config.inc.sh
+
 
 #compute displacement
   #2D-projection
