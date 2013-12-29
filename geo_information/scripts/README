@@ -1,0 +1,23 @@
+
+configs/
+	Directory with configuration files for different scenarios
+
+
+print_config.sh
+	Print configuration
+
+clean_tmp.sh
+	Cleanup temporary files
+
+compute_displ.sh
+	Compute displacements
+
+convert_displ.sh
+	Convert displacement data
+
+convert_bath.sh
+	Convert bathymetry data
+
+convert.sh
+	Do all above mentioned operations
+
