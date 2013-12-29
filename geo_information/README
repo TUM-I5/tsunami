@@ -1,0 +1,22 @@
+
+
+Directories
+===================
+
+data:
+	Input data directory.
+	This directory has to be filled with data from
+	other repositories.
+
+output:
+	Output directory for NetCDF Files used as input
+	for Tsunami simulations.
+
+plots:
+	Plots for visualization are written to this directory.
+
+scripts:
+	Scripts for processing Tsunami related data.
+
+tmp:
+	Directory for temporary files.
