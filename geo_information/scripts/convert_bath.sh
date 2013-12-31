@@ -35,6 +35,10 @@
 # load configuration
 . ./scripts/config.inc.sh
 
+echo -e "*****************************"
+echo -e "*** CONVERT BATHYMETRY    ***"
+echo -e "*****************************"
+
 #plot overview of the region
   #   -Dh high precision coast line data, f: full precision
   #   -S filling/clipping water

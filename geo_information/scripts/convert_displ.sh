@@ -34,6 +34,9 @@
 # load configuration
 . ./scripts/config.inc.sh
 
+echo -e "*****************************"
+echo -e "*** CONVERT DISPLACEMENT  ***"
+echo -e "*****************************"
 
 #compute displacement
   #2D-projection

@@ -7,7 +7,10 @@
 
 
   echo
+  echo "**********************************"
   echo "********* TSUNAMI CONFIG *********"
+  echo "**********************************"
+
   echo "  WRITEDATATO=$WRITEDATATO"
   echo "  WRITETOASCII=$WRITETOASCII"
   echo "  TEMPDIR=$TEMPDIR"

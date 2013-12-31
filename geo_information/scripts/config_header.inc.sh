@@ -4,7 +4,7 @@
 # Configuration file for Tsunami input data generation
 #
 
-  echo -e "\n*** setting user varibles ***"
+#  echo -e "\n*** SETTING USER VARIBLES ***"
   #All paths are relative to the working dir
   WORKINGDIR=$PWD
 
@@ -46,7 +46,7 @@
   test "`hostname`" == "laptop42" && GMTPREFIX="GMT "
 
 #set environment variables
-  echo -e "\n*** setting environment variables ***"
+#  echo -e "\n*** setting environment variables ***"
   #export NETCDFHOME=/Users/breuera/software/gmt/netcdf-3.6.3
 
   if [ `hostname` == "alex" ]; then
@@ -61,8 +61,8 @@
   #export PATH=/Users/breuera/software/gmt/bin:$PATH
   export PYTHONPATH=$DISPLLIBS:$PYTHONPATH
   
-  echo "********* LIB CONFIG *********"
-  echo "  NETCDFHOME=$NETCDFHOME"
-  echo "  PATH=$PATH"
-  echo "  PYTHONPATH=$PYTHONPATH"
-  echo
+#  echo "********* LIB CONFIG *********"
+#  echo "  NETCDFHOME=$NETCDFHOME"
+#  echo "  PATH=$PATH"
+#  echo "  PYTHONPATH=$PYTHONPATH"
+#  echo

@@ -35,8 +35,9 @@
 . ./scripts/config.inc.sh
 
 
-#compute displacement
-  echo -e "\n*** computing displacement ***"
+  echo -e "******************************"
+  echo -e "*** COMPUTING DISPLACEMENT ***"
+  echo -e "******************************"
   test -e "$DISPLSUBFAULTS" || { echo "Subfault file not available '$DISPLSUBFAULTS'"; exit 1; }
 
   #GeoClaw

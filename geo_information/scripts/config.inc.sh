@@ -1,5 +1,10 @@
 #!/bin/bash
 
+echo "*****************************"
+echo "*** SETTING UP CONFIG     ***"
+echo "*****************************"
+
+
 #
 # Load configuration
 #
@@ -25,7 +30,6 @@ if [ -e "config.inc.sh" ]; then
   echo
   exit 1
 fi
-
 
 echo "Loading config header"
 . ./scripts/config_header.inc.sh

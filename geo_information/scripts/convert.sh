@@ -33,12 +33,12 @@
 
 
 
-. ./scripts/print_config.sh
+./scripts/print_config.sh $@
 
-. ./scripts/clean_tmp.sh
+#./scripts/clean_tmp.sh $@
 
-. ./scripts/convert_bath.sh
+./scripts/convert_bath.sh $@
 
-. ./scripts/compute_displ.sh
-. ./scripts/convert_displ.sh
+./scripts/compute_displ.sh $@
+./scripts/convert_displ.sh $@
 
