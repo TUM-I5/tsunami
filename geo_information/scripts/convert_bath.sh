@@ -52,21 +52,26 @@ echo -e "*****************************"
   #   -U GMT timestamp
   echo -e "\n*** generating overview map"
   #Append 17.5c to avoid annoying warnings: "Warning: %s not a valid number and may not be decoded properly."
-  $GMTPREFIX pscoast -R"$PLOTREGION" -Df -N1 -J"$PLOTPROJECTION" -Glightgrey -W -B10 -U -K > "$PLOTDIR"/"$METANAME"_overview.ps
+  $GMTPREFIX pscoast -R"$PLOTREGION" -Df -N1 -J"$PLOTPROJECTION" -Glightgrey -W -B10 -U -K > "$PLOTDIR"/"$METANAME"_overview.ps || exit 1
 
   #add symbols
-  $GMTPREFIX psxy $DARTSTATIONSFILE -R"$PLOTREGION" -J"$PLOTPROJECTION" -Sd.3 -Gyellow -O -K -V >> "$PLOTDIR"/"$METANAME"_overview.ps
+  $GMTPREFIX psxy $DARTSTATIONSFILE -R"$PLOTREGION" -J"$PLOTPROJECTION" -Sd.3 -Gyellow -O -K -V >> "$PLOTDIR"/"$METANAME"_overview.ps || exit 1
   #add labels
     # -Wo rectangle (debug)
     # -D displacement
     # -O overlay, no new plot
     # -F+f font size
 #  pstext $DARTSTATIONSFILE -R"$PLOTREGION" -J"$PLOTPROJECTION" -X.4c -F+f7 -D0/.25c -O -V >> "$PLOTDIR"/"$METANAME"_overview.ps
-  $GMTPREFIX pstext $DARTSTATIONSFILE -R"$PLOTREGION" -J"$PLOTPROJECTION" -X.4c -D0/.25c -O -V >> "$PLOTDIR"/"$METANAME"_overview.ps
+  $GMTPREFIX pstext $DARTSTATIONSFILE -R"$PLOTREGION" -J"$PLOTPROJECTION" -X.4c -D0/.25c -O -V >> "$PLOTDIR"/"$METANAME"_overview.ps || exit 1
 
   #extract bathymetry data in the specified region
-  $GMTPREFIX grdcut $GRIDFILE -R$REGION -G$TEMPDIR/bath.nc
-  $GMTPREFIX grdinfo -L2 $TEMPDIR/bath.nc
+  echo $GMTPREFIX grdcut $GRIDFILE -R$REGION -G$TEMPDIR/bath.nc
+  if [ ! -e $TEMPDIR/bath.nc ]; then
+	$GMTPREFIX grdcut $GRIDFILE -R$REGION -G$TEMPDIR/bath.nc || exit 1
+  fi
+
+  echo $GMTPREFIX grdinfo -L2 $TEMPDIR/bath.nc
+  $GMTPREFIX grdinfo -L2 $TEMPDIR/bath.nc || exit 1
 
   #2D-projection
   echo -e "\n*** generating 2D-projections ($PROJECTION) ***"
@@ -81,12 +86,25 @@ echo -e "*****************************"
   #   -N select the number of grid nodes (implicit: grid spacing)
 
   if [ "$PROJECTIONTYPE" = "cylindrical" ]; then
-    $GMTPREFIX grdproject $TEMPDIR/bath.nc -J$PROJECTION -G"$TEMPDIR"/bath2.nc -A -V2
-    $GMTPREFIX grdsample $TEMPDIR/bath2.nc -I$GRIDSPACING -G"$WRITEDATATO/$METANAME"_bath.nc
+    echo "*** cylindrical projection"
+    echo $GMTPREFIX grdproject $TEMPDIR/bath.nc -J$PROJECTION -G"$TEMPDIR"/bath2.nc -A -V2
+    $GMTPREFIX grdproject $TEMPDIR/bath.nc -J$PROJECTION -G"$TEMPDIR"/bath2.nc -A -V2 || exit 1
+
+    echo $GMTPREFIX grdsample $TEMPDIR/bath2.nc -I$GRIDSPACING -G"$WRITEDATATO/$METANAME"_bath.nc
+    $GMTPREFIX grdsample $TEMPDIR/bath2.nc -I$GRIDSPACING -G"$WRITEDATATO/$METANAME"_bath.nc || exit 1
 
   elif [ "$PROJECTIONTYPE" = "spherical" ]; then
-    $GMTPREFIX grdproject $TEMPDIR/bath.nc -R$REGION -J$PROJECTION -C -A -G"$TEMPDIR"/bath2.nc -V2
-    $GMTPREFIX grdsample $TEMPDIR/bath2.nc -R$REGION -I$GRIDSPACING -R$BATHREGIONSPH -G"$WRITEDATATO/$METANAME"_bath.nc
+    echo "*** spherical projection"
+    echo $GMTPREFIX grdproject $TEMPDIR/bath.nc -R$REGION -J$PROJECTION -C -A -G"$TEMPDIR"/bath2.nc -V2
+    if [ ! -e $TEMPDIR/bath2.nc ]; then
+      $GMTPREFIX grdproject $TEMPDIR/bath.nc -R$REGION -J$PROJECTION -C -A -G"$TEMPDIR"/bath2.nc -V2 || exit 1
+    fi
+
+    echo $GMTPREFIX grdsample $TEMPDIR/bath2.nc -R$REGION -I$GRIDSPACING -R$BATHREGIONSPH -G"$WRITEDATATO/$METANAME"_bath.nc
+    #$GMTPREFIX grdsample $TEMPDIR/bath2.nc -R$REGION -I$GRIDSPACING -R$BATHREGIONSPH -G"$WRITEDATATO/$METANAME"_bath.nc || exit 1
+    if [ ! -e "$WRITEDATATO/$METANAME"_bath.nc ]; then
+      $GMTPREFIX grdsample $TEMPDIR/bath2.nc -I$GRIDSPACING -R$BATHREGIONSPH -G"$WRITEDATATO/$METANAME"_bath.nc || exit 1
+    fi
 
   else
     echo -e "\n *** WARNING: Selected projection is not valid; select either \"cylindrical\" or \"spherical\."

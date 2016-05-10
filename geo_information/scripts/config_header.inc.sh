@@ -41,9 +41,10 @@
   DISPLREFORMATSCRIPT=scripts/tools/reformat.r
 
 
-  # Use GMT program execution prefix on recent ubuntu systems to execute gmt tools
   GMTPREFIX=""
-  test "`hostname`" == "laptop42" && GMTPREFIX="GMT "
+
+  # Use gmt program execution prefix on recent ubuntu systems to execute gmt tools
+  type gmt && GMTPREFIX="gmt "
 
 #set environment variables
 #  echo -e "\n*** setting environment variables ***"

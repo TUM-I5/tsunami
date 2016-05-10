@@ -1,4 +1,9 @@
 
+IMPORTANT: Execute all scripts from this directory.
+
+E.g.
+
+./scripts/convert.sh  tohoku
 
 Directories
 ===================

@@ -60,7 +60,8 @@ echo -e "*****************************"
     $GMTPREFIX mapproject $DARTSTATIONSFILE -J$PROJECTION -C -F -R0/360/0/90 >"$WRITEDATATO/$METANAME"_poi.txt
 
     $GMTPREFIX grdproject $TEMPDIR/displ.nc -R$REGION -J$PROJECTION -C -A -G"$TEMPDIR"/displ2.nc -V2
-    $GMTPREFIX grdsample $TEMPDIR/displ2.nc -R$REGION -I$GRIDSPACING -R$DISPLREGIONSPH -G"$TEMPDIR"/displ3.nc
+    #$GMTPREFIX grdsample $TEMPDIR/displ2.nc -R$REGION -I$GRIDSPACING -R$DISPLREGIONSPH -G"$TEMPDIR"/displ3.nc
+    $GMTPREFIX grdsample $TEMPDIR/displ2.nc -I$GRIDSPACING -R$DISPLREGIONSPH -G"$TEMPDIR"/displ3.nc
   else
     echo -e "\n *** WARNING: Selected projection is not valid; select either \"cylindrical\" or \"spherical\."
   fi

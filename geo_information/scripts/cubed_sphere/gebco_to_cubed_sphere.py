@@ -36,11 +36,11 @@ elif dataset == 2:
 	debug_mode = True
 
 elif dataset == 3:
-	input_file="/home/schreibm/repositories/tsunami_git/geo_information/output/tohoku_gebco_ucsb3_500m_hawaii_raw_displ.xyz"
-	grd_file="/home/schreibm/repositories/tsunami_git/geo_information/output/tohoku_gebco_ucsb3_500m_hawaii_raw_displ.nc"
+	input_file=os.getcwd()+"/../../output/tohoku_gebco_ucsb3_500m_hawaii_raw_displ.xyz"
+	grd_file=os.getcwd()+"/../../output/tohoku_gebco_ucsb3_500m_hawaii_raw_displ.nc"
 	displ_region="140/145/35/41"
 	resolution="1m"
-	cmd="GMT xyz2grd"
+	cmd="gmt xyz2grd"
 	cmd+=" "+input_file
 	cmd+=" -V"
 	cmd+=" -R"+displ_region
@@ -65,17 +65,17 @@ tmp_file="tmp.nc"
 
 
 print "Grid info:"
-cmd = "GMT grdinfo "+input_file
+cmd = "gmt grdinfo "+input_file
 os.system(cmd)
 
 
 def getGridSize(filename):
-	cmd = "GMT grdinfo "+filename+" -C"
+	cmd = "gmt grdinfo "+filename+" -C"
 	o = commands.getoutput(cmd).split("\t")
 	return (float(o[2]), float(o[4]))
 
 def getGridIncAndRes(filename):
-	cmd = "GMT grdinfo "+filename+" -C"
+	cmd = "gmt grdinfo "+filename+" -C"
 	o = commands.getoutput(cmd).split("\t")
 	return (float(o[7]), float(o[8]), int(o[9]), int(o[10]))
 
@@ -158,10 +158,10 @@ def execcmd(cmd):
 
 
 # make colormap
-execcmd("GMT makecpt -Cglobe > globe_colortable.cpt")
+execcmd("gmt makecpt -Cglobe > globe_colortable.cpt")
 
 # output global map
-#execcmd("GMT grdimage -B -V "+input_file+" -R"+global_region+" -Cglobe_colortable.cpt -Jx0.07/0.07 > global_map.ps")
+#execcmd("gmt grdimage -B -V "+input_file+" -R"+global_region+" -Cglobe_colortable.cpt -Jx0.07/0.07 > global_map.ps")
 
 
 res = face_res
@@ -202,7 +202,7 @@ for subregion in subregions_a:
 	if not subregion in ['top', 'bottom']:
 
 		tmp_res = str(int(res)*2)
-		execcmd("GMT grdproject -JF"+projection_centers[subregion]+'/'+str(angle)+"/1 "+interpolation_parameter+" -V -R"+source_regions[subregion]+" -N"+tmp_res+"/"+tmp_res+" "+input_file+" -G"+tmp_file)
+		execcmd("gmt grdproject -JF"+projection_centers[subregion]+'/'+str(angle)+"/1 "+interpolation_parameter+" -V -R"+source_regions[subregion]+" -N"+tmp_res+"/"+tmp_res+" "+input_file+" -G"+tmp_file)
 
 		(size_x, size_y) = getGridSize(tmp_file)
 		print "size: "+str(size_x)+", "+str(size_y)
@@ -213,12 +213,12 @@ for subregion in subregions_a:
 
 		#
 		# we have to compute the padding based on the incremental values.
-		# otherwise GMT is complaining about inaccurate stuff
+		# otherwise gmt is complaining about inaccurate stuff
 		#
 		padding_l=tmp_x_inc*(tmp_res_x/4)
 		padding_r=1.0-tmp_x_inc*(tmp_res_x/4)
 
-		execcmd("GMT grdcut "+tmp_file+" -R"+str(padding_l)+"/"+str(padding_r)+"/"+str(padding_l)+"/"+str(padding_r)+" -fg -G"+output_file)
+		execcmd("gmt grdcut "+tmp_file+" -R"+str(padding_l)+"/"+str(padding_r)+"/"+str(padding_l)+"/"+str(padding_r)+" -fg -G"+output_file)
 
 	else:
 		#
@@ -226,12 +226,12 @@ for subregion in subregions_a:
 		#   there seems to be a bug since specifying 80 degree is modified to 45
 		#   and furthermore not drawing the sperical restriction
 		# WARNING WARNING WARNING WARNING WARNING WARNING WARNING
-		execcmd("GMT grdproject -JF"+projection_centers[subregion]+"/80/1 "+interpolation_parameter+" -V -R"+source_regions[subregion]+" -N"+str(res)+"/"+str(res)+" "+input_file+" -G"+output_file)
+		execcmd("gmt grdproject -JF"+projection_centers[subregion]+"/80/1 "+interpolation_parameter+" -V -R"+source_regions[subregion]+" -N"+str(res)+"/"+str(res)+" "+input_file+" -G"+output_file)
 
 	(size_x, size_y) = getGridSize(output_file)
 	print "size: "+str(size_x)+", "+str(size_y)
 
-	execcmd("GMT grdimage -V -B1 -Jx"+str(15.0/size_x)+" -R0/10/0/10 -Cglobe_colortable.cpt "+output_file+" > "+output_file_ps)
+	execcmd("gmt grdimage -V -B1 -Jx"+str(15.0/size_x)+" -R0/10/0/10 -Cglobe_colortable.cpt "+output_file+" > "+output_file_ps)
 
 
 os.system("rm "+tmp_file)
